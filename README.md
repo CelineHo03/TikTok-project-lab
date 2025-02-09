@@ -1,8 +1,6 @@
 
 # Tiktok Project Lab: Classifying videos using machine learning**
 
-* [View the rendered notebook on nbviewer] https://nbviewer.org/github/CelineHo03/TikTok-project-lab/blob/main/TIktok%20Project%20Lab-Updated%20%281%29%20%281%29.ipynb#
-
 In this project I will practice using machine learning techniques to predict on a binary outcome variable.
 <br/>
 
