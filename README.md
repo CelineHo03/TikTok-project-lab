@@ -9,8 +9,14 @@ In this project I will practice using machine learning techniques to predict on 
 **The goal** of this project is to predict whether a TikTok video presents a "claim" or presents an "opinion".
 <br/>
 
+This activity follows the PACE framework, which consists of four key steps:
 
-## Project Overview 
+* **Plan** – Define objectives, set goals, and outline the approach.
+* **Analyze** – Gather data, assess insights, and identify key factors.
+* **Execute** – Implement the plan, take action, and monitor progress.
+* **Evaluate** – Review outcomes, measure effectiveness, and refine strategies.
+
+## Plan
 
 * **Business need and modeling objective**
 
@@ -51,4 +57,36 @@ Previous work with this data has revealed that there are ~20,000 videos in the s
 
 ![](https://raw.githubusercontent.com/adacert/tiktok/main/optimal_model_flow_numbered.svg)
 
-## Findings and Results
+## Analyze
+
+* **Structure & Size:**
+
+The dataset contains 19,382 entries (rows) and 12 columns, each representing different attributes related to video content and performance metrics.
+
+* **Missing Data:**
+
+Some columns contain missing values including claim_status, video_transcription_text. However, there are very few missing values relative to the number of samples in the dataset (298 / 19382). Therefore, observations with missing values can be dropped.
+
+* **Data Types:**
+
+** Integers (e.g., video_id, video_duration_sec)
+
+** Floats (engagement metrics)
+
+** Objects (status fields like claim_status, verified_status, author_ban_status)
+
+*  **Class Balance**
+
+By checking class proportion, claim_status is almost evenly split between two categories:
+
+** claim: 50.3%
+
+** opinion: 49.7%
+
+This near 50/50 distribution suggests that the dataset contains a balanced mix of claims and opinions.
+
+## Construct
+
+* **Feature Engineering**
+
+* 
