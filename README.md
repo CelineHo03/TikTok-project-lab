@@ -109,3 +109,19 @@ Each model's performance was compared to select the best fit for the task.
 ## Evaluate 
 
 ![](https://private-user-images.githubusercontent.com/179644177/411378099-cfd89be1-6a68-4b1d-babb-8fa0b77357b8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzkxNTIyNDcsIm5iZiI6MTczOTE1MTk0NywicGF0aCI6Ii8xNzk2NDQxNzcvNDExMzc4MDk5LWNmZDg5YmUxLTZhNjgtNGIxZC1iYWJiLThmYTBiNzczNTdiOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxMFQwMTQ1NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04MTA1OGVhZmJhZjkxZjFjNzUxZTE4MTFmNDRiMWRhOGZkZThkMTA1NWQ1MzY0OGQ0YTE4ZmMyNzJlZDE4YzRmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.6EWdpAt8-xo7sDY7jvBT-wQzTNTqsNXggs7zpRtF-B8)
+
+The accuracy scores for each tested model are as follows:
+
+Model	Accuracy
+
+** Random Forest (RF)	0.9995
+
+** XGBoost (XGB)	0.9990
+
+** CatBoost (CB)	1.0000
+
+** Support Vector Machine (SVM)	1.0000
+
+** LightGBM (LGBM)	0.9997
+
+** AdaBoost (ADA)	0.9993
