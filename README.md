@@ -87,6 +87,22 @@ This near 50/50 distribution suggests that the dataset contains a balanced mix o
 
 ## Construct
 
-* **Feature Engineering**
+* **Transformation Step**
+In the transformation phase, categorical variables were encoded to prepare them for model integration. Additionally, the text data contained in video_transcription_text was converted into a numerical format using the CountVectorizer technique.
 
-* 
+* **Model Building**
+
+A series of machine learning models were evaluated to determine the optimal predictive approach. The following algorithms were tested:
+
+** Random Forest
+** XGBoost
+** CatBoost
+** Support Vector Machines (SVM)
+** LightGBM
+** AdaBoost
+
+Each model's performance was compared to select the best fit for the task.
+
+## Evaluate 
+
+
