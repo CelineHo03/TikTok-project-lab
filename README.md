@@ -20,13 +20,14 @@ This activity follows the PACE framework, which consists of four key steps:
 
 * **Business need and modeling objective**
 
+
 TikTok users can report videos that they believe violate the platform's terms of service. Because there are millions of TikTok videos created and viewed every day, this means that many videos get reported—too many to be individually reviewed by a human moderator.
 
 Analysis indicates that when authors do violate the terms of service, they're much more likely to be presenting a claim than an opinion. Therefore, it is useful to be able to determine which videos make claims and which videos are opinions.
 
 TikTok wants to build a machine learning model to help identify claims and opinions. Videos that are labeled opinions will be less likely to go on to be reviewed by a human moderator. Videos that are labeled as claims will be further sorted by a downstream process to determine whether they should get prioritized for review. For example, perhaps videos that are classified as claims would then be ranked by how many times they were reported, then the top x% would be reviewed by a human each day.
 
-A machine learning model would greatly assist in the effort to present human moderators with videos that are most likely to be in violation of TikTok's terms of service.
+I will build 6 classification models. All models were used to predict on a held-out validation dataset, and final model selection was determined by the model with the best recall score. The final model was then used to score a test dataset to estimate future performance.
 
 * **Modeling design and target variable**
 
@@ -126,3 +127,12 @@ Model	Accuracy
 
 ** AdaBoost (ADA)	0.9993
 
+All models performed exceptionally well except for SVM. The CatBoost model had a highest recall score (1.000) and was selected as champion.
+
+Performance of CatBoost on the test holdout data yielded near perfect scores, with only five misclassified samples out of 3,817.
+
+Subsequent analysis indicated that, as expected, the primary predictors were all related to video engagement levels, with video view count, like count, share count, and download count accounting for nearly all predictive signal in the data. With these results, we can conclude that videos with higher user engagement levels were much more likely to be claims. In fact, no opinion video had more than 10,000 views.
+
+## Next Step
+
+I recommends monitoring the distributions of video engagement levels to ensure that the model remains robust to fluctuations in its most predictive features.
