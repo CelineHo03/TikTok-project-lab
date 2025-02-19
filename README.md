@@ -29,11 +29,6 @@ TikTok wants to build a machine learning model to help identify claims and opini
 
 I will build 6 classification models. All models were used to predict on a held-out validation dataset, and final model selection was determined by the model with the best recall score. The final model was then used to score a test dataset to estimate future performance.
 
-* **Modeling design and target variable**
-
-The data dictionary shows that there is a column called claim_status. This is a binary value that indicates whether a video is a claim or an opinion. This will be the target variable. In other words, for each video, the model should predict whether the video is a claim or an opinion.
-
-This is a classification task because the model is predicting a binary class.
 
 * **Select an evaluation metric**
 
@@ -46,17 +41,6 @@ There are two possibilities for bad predictions:
 In the given scenario, it's better for the model to predict false positives when it makes a mistake, and worse for it to predict false negatives. It's very important to identify videos that break the terms of service, even if that means some opinion videos are misclassified as claims. The worst case for an opinion misclassified as a claim is that the video goes to human review. The worst case for a claim that's misclassified as an opinion is that the video does not get reviewed and it violates the terms of service. A video that violates the terms of service would be considered posted from a "banned" author, as referenced in the data dictionary.
 
 Because it's more important to minimize false negatives, the model evaluation metric will be recall.
-
-* **Modeling workflow and model selection process**
-
-Previous work with this data has revealed that there are ~20,000 videos in the sample. This is sufficient to conduct a rigorous model validation workflow, broken into the following steps:
-
-1. Split the data into train/validation/test sets (60/20/20)
-2. Fit models and tune hyperparameters on the training set
-3. Perform final model selection on the validation set
-4. Assess the champion model's performance on the test set
-
-![](https://raw.githubusercontent.com/adacert/tiktok/main/optimal_model_flow_numbered.svg)
 
 ## Analyze
 
@@ -88,7 +72,7 @@ This near 50/50 distribution suggests that the dataset contains a balanced mix o
 
 ## Construct
 
-![](https://private-user-images.githubusercontent.com/179644177/411362403-948fbad7-b9b5-4451-8815-a94f4b7f900d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzkxNTIyNDcsIm5iZiI6MTczOTE1MTk0NywicGF0aCI6Ii8xNzk2NDQxNzcvNDExMzYyNDAzLTk0OGZiYWQ3LWI5YjUtNDQ1MS04ODE1LWE5NGY0YjdmOTAwZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxMFQwMTQ1NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMWMwMjY2ODdiNzcyNmU5YWExZTA1YjRhYjBiNjZhNmJiNGViNTY2ODEyNjA5ODc2NmZmY2ZiNDA4YjQyOTU1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.UM2STeEBuf1oGMgU8EdaOByicagkiqN5jv12rG_JU_w)
+![](https://private-user-images.githubusercontent.com/179644177/411362403-948fbad7-b9b5-4451-8815-a94f4b7f900d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzkxNTIyNDcsIm5iZiI6MTczOTE1MTk0NywicGF0aCI6Ii8xNzk2NDQxNzcvNDExMzYyNDAzLTk0OGZiYWQ3LWI5YjUtNDQ1MS04ODE1LWE5NGY0YjdmOTAwZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxMFQwMTQ1NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMWMwMjY2ODdiNzcyNmU5YWExZTA1YjRhYjBiNjZhNmJiNGViNTY2ODEyNjA5ODc2NmZmY2ZiNDA4YjQyOTU1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.UM2STeEBuf1oGMgU8EdaOByicagkiqN5jv12rG_JU_w) 
 
 
 * **Transformation Step**
